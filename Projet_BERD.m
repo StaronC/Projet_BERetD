@@ -42,7 +42,7 @@ ylabel('g');
 %}
 
 
-%Créer un scatter plot 3D (histogramme 3D) de l'image RGB 'peppers.jfif'
+%% Créer un scatter plot 3D (histogramme 3D) de l'image RGB 'peppers.jfif'
 
 clc;
 close all;
@@ -54,8 +54,6 @@ rgbImage = imread('peppers.jfif');
 %visualiser l'image de couleur originale
 imshow(rgbImage, 'InitialMagnification', 'fit');
 title('Image Couleur Originale');
-%Elargir la figure pour qu'elle occupe toute l'écran
-set(gcf, 'units','normalized','outerposition',[0 0 1 1]);
 
 %extraire les couleurs rouge, vert, et bleu inviduellement.
 rouge = rgbImage(:, :, 1);
@@ -92,7 +90,7 @@ for rouge = 1 : 256
 		end
 	end
 end
-figure;
+figure();
 H1 = plot3(r, v, b, '.', 'Color', 'k');
 xlabel('R');
 ylabel('V');
