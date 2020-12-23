@@ -9,12 +9,12 @@ function nuage_de_points3D_avec_donnees3D(img3D)
 imshow(img3D, 'InitialMagnification', 'fit');
 title('Image couleur Originale');
 
-%extraire les couleurs rouge, vert, et bleu inviduellement.
+% extraire les couleurs rouge, vert, et bleu inviduellement.
 red = img3D(:, :, 1);
 green = img3D(:, :, 2);
 blue = img3D(:, :, 3);
 
-%construire l'histogramme 3D
+% construction de l'histogramme 3D
 hist3D = zeros(li/2,col/2,col/2);
 for ligne = 1: li
 	for colonne = 1 : col
@@ -25,8 +25,8 @@ for ligne = 1: li
 	end
 end
 
-%obtenir une liste de couleurs (r,v,b) =! 0 pour la mettre dans plot3()
-%pour qu'on puisse visualiser les couleurs existants
+% obtenir une liste de couleurs (r,v,b) =! 0 pour la mettre dans plot3()
+% pour qu'on puisse visualiser les couleurs existants
 
 r = zeros(li/2, 1);
 v = zeros(li/2, 1);
@@ -37,7 +37,7 @@ for rouge = 1 : li/2
 	for vert = 1: li/2
 		for bleu = 1: li/2
 			if (hist3D(rouge, vert, bleu) > 1)
-                %enregistrer la position RGB du couleur.
+                %enregistrer la position RGB de la couleur.
 				r(Pixel_diffde_Zero) = rouge;
 				v(Pixel_diffde_Zero) = vert;
 				b(Pixel_diffde_Zero) = bleu;
