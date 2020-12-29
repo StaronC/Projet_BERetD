@@ -1,4 +1,4 @@
-function nuage_de_points3D_avec_donnees3D(img3D)
+function [r,v,b] = nuage_de_points3D_avec_donnees3D(img3D)
 % nuage_de_points3D_avec_donnees3D(img3D)
 %
 % Fonction permettant de creer un nuage de points 3D a partir d'une image

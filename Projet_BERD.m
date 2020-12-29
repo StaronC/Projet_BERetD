@@ -1,6 +1,7 @@
-clc;
 close all;
 clear;
+
+
 %{
 %% Representation histogramme 2D avec donnees 3D
 
@@ -18,4 +19,8 @@ histogramme2D_avec_donnees3D(I);
 
 rgbImage = imread('peppers.jfif');
 
-nuage_de_points3D_avec_donnes3D(rgbImage);
+[r,v,b] = nuage_de_points3D_avec_donnees3D(rgbImage);
+
+%% Transformation en échelle logarithmique
+
+[H2r,H2v,H2b] = test_application_log(r,v,b);
