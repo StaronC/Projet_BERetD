@@ -33,7 +33,6 @@ plot3(r_H2, v_H2, b_H2, '.', 'Color', 'k');
 xlabel('R');
 ylabel('V');
 zlabel('B');
-
 end
 
 %Vous verrez que le résultats obtenus semble incorrect, si vous avez des

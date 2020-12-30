@@ -24,3 +24,16 @@ rgbImage = imread('peppers.jfif');
 %% Transformation en échelle logarithmique
 
 [H2r,H2v,H2b] = test_application_log(r,v,b);
+
+%% Lissage de l'histogramme
+
+% imgaussfilt3( ?
+
+
+
+%% Creation de l'element structurant et fermeture morphologique
+
+ES = construction_element_structurant();
+
+
+
