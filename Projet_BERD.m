@@ -19,7 +19,7 @@ histogramme2D_avec_donnees3D(I);
 
 rgbImage = imread('peppers.jfif');
 
-[r,v,b] = nuage_de_points3D_avec_donnees3D(rgbImage);
+[r,v,b,H] = nuage_de_points3D_avec_donnees3D(rgbImage);
 
 %% Transformation en échelle logarithmique
 
@@ -36,4 +36,6 @@ rgbImage = imread('peppers.jfif');
 ES = construction_element_structurant();
 
 
+%% Application de l'algorithme LPE
 
+% watershed( ?

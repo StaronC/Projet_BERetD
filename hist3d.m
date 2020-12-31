@@ -76,12 +76,12 @@ function [tab,I,J]=hist3d(x,y,z,xedges,yedges)
 if nargin<5
          error('Insufficient number of inputs');
 end
-if (length(x)~=length(y) | length(x)~=length(z) |  length(y)~=length(z) )
+if (length(x)~=length(y) || length(x)~=length(z) ||  length(y)~=length(z) )
          error('the vectors x,y,z must have the same size');
 end
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-[xn, J] = histc(x,xedges);  %J gives the column indices of elements
-[yn, I] = histc(y,yedges);  %I gives the row indices of elements
+[~, J] = histcounts(x,xedges);  %J gives the column indices of elements
+[~, I] = histcounts(y,yedges);  %I gives the row indices of elements
 %% ignoring out of range values
 idnonnul=find(J'.*I' ~= 0); 
 J_new=J(idnonnul);
@@ -97,6 +97,7 @@ z_new=z(idnonnul);
 % summing the values of the duplicated indices:
 tab=zeros(length(yedges),length(xedges));
 id=sub2ind(size(tab),I_new',J_new'); %indices of the matrix
-[new_id, f, v] = unique(id(:)); %find duplicated indices
+[new_id,~, v] = unique(id(:)); %find duplicated indices
 val_summed = accumarray(v, z_new); %summing the values of duplicated indices
 tab(new_id)=val_summed;
+end
