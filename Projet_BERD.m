@@ -1,7 +1,6 @@
 close all;
 clear;
 
-
 %{
 %% Representation histogramme 2D avec donnees 3D
 
@@ -14,22 +13,19 @@ histogramme2D_avec_donnees3D(I);
 
 %}
 
-
 %% Créer un scatter plot 3D (histogramme 3D) a partir d'une image RGB
 
 rgbImage = imread('peppers.jfif');
 
-[r,v,b,H] = nuage_de_points3D_avec_donnees3D(rgbImage);
+[r,v,b] = nuage_de_points3D_avec_donnees3D(rgbImage);
 
 %% Transformation en échelle logarithmique
 
-[H2r,H2v,H2b] = test_application_log(r,v,b);
+%[H2r,H2v,H2b] = test_application_log(r,v,b);
 
-%% Lissage de l'histogramme
+%% Lissage de l'histogramme et saturation
 
-% imgaussfilt3( ?
-
-
+[rsat,vsat,bsat] = filtrage_saturation(r,v,b);
 
 %% Creation de l'element structurant et fermeture morphologique
 

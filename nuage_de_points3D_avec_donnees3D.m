@@ -1,4 +1,4 @@
-function [r,v,b,hist3D] = nuage_de_points3D_avec_donnees3D(img3D)
+function [r,v,b] = nuage_de_points3D_avec_donnees3D(img3D)
 % nuage_de_points3D_avec_donnees3D(img3D)
 %
 % Fonction permettant de creer un nuage de points 3D a partir d'une image
@@ -49,6 +49,7 @@ end
 
 figure();
 plot3(r, v, b, '.', 'Color', 'k');
+title('Représentation de l''histogramme 3D de l''image originale');
 xlabel('R');
 ylabel('V');
 zlabel('B');
